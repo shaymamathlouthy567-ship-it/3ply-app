@@ -1,6 +1,4 @@
-/* ADD THIS TO YOUR CSS (Replace the old inputs section) */
-
-/* --- INTERACTIVE CONTROLS --- */
+/* --- INTERACTIVE CONTROLS (100% FLAT VECTOR, NO GLASS) --- */
 .input-group {
     display: flex;
     flex-direction: column;
@@ -8,7 +6,7 @@
     margin-bottom: 5px;
 }
 
-/* The Time Machine Slider */
+/* The Time Machine Slider (Chunky & Flat) */
 .slider-container {
     position: relative;
     display: flex;
@@ -24,32 +22,35 @@
     border-radius: 20px;
     font-size: 14px;
     letter-spacing: 1px;
+    border: 2px solid var(--black);
 }
 
 .custom-slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 20px;
+    height: 24px; /* Thicker track */
     background: var(--white);
-    border: 3px solid var(--black);
-    border-radius: 10px;
+    border: 4px solid var(--black); /* Bold outline */
+    border-radius: 12px;
     outline: none;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    /* Hard solid shadow, absolutely no soft blur */
+    box-shadow: 4px 4px 0px var(--black); 
 }
 
 .custom-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: var(--gold);
-    border: 3px solid var(--black);
+    border: 4px solid var(--black);
     cursor: pointer;
-    box-shadow: 2px 4px 0px var(--btn-shadow);
+    /* Hard flat shadow for the thumb */
+    box-shadow: 3px 3px 0px var(--black);
 }
 
-/* The Dashboard Dials */
+/* The Dashboard Dials (Cartoon Plastic Knobs) */
 .dials-row {
     display: flex;
     justify-content: space-around;
@@ -72,13 +73,17 @@
     border: 4px solid var(--black);
     background-color: var(--white);
     position: relative;
-    touch-action: none; /* Crucial: stops screen scrolling when dragging */
-    box-shadow: 4px 6px 0px var(--btn-shadow);
+    touch-action: none;
     cursor: grab;
+    /* Solid black vector shadow to pop off the card */
+    box-shadow: 6px 6px 0px var(--black);
 }
 
 .dial-container:active {
     cursor: grabbing;
+    /* Pushes down like a real button when clicked */
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px var(--black);
 }
 
 .dial-value {
@@ -88,6 +93,7 @@
     transform: translate(-50%, -46%);
     font-size: 32px;
     color: var(--black);
+    font-weight: bold;
 }
 
 /* The Rotating Mechanism */
@@ -110,5 +116,5 @@
 }
 
 .cobalt-dot {
-    background: var(--tile-bg); /* Use blue for the second dial */
+    background: var(--tile-bg);
 }
