@@ -110,3 +110,24 @@ button:active {
     font-size: 14px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
+/* --- DESKTOP & WEB UPGRADES --- */
+@media (min-width: 600px) {
+    .container {
+        background-color: #1c1c1e; /* Premium dark gray card */
+        padding: 48px;
+        border-radius: 28px;
+        box-shadow: 0 24px 48px rgba(0,0,0,0.8); /* Deep shadow */
+        max-width: 460px; /* Make it slightly wider */
+        border: 1px solid #2c2c2e; /* Subtle Apple-style border */
+    }
+
+    body {
+        /* Optional: Gives the web background a slightly different vibe so the card pops */
+        background: radial-gradient(circle at center, #111111 0%, #000000 100%);
+    }
+
+    input {
+        background-color: #000000; /* Darkens inputs against the gray card */
+        border: 1px solid #3a3a3c;
+    }
+}
