@@ -3,40 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The Stash.</title>
-    <meta name="theme-color" content="#93a284">
+    <title>THE STASH. Never bare.</title>
+    <meta name="theme-color" content="#FCE7F3">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts: chunky block font, thin script font, and a clean sans-serif -->
+    
+    <!-- Google Fonts: Rounded playful (Fredoka), thin script (Reenie Beanie) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Reenie+Beanie&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Bathroom environment (Tiles BG) -->
     <div class="main-wrapper">
-        <div class="container">
-            <header class="chunky-header">
+        <div class="container floating-card">
+            
+            <!-- Exact Illustration recreated as Vector SVG -->
+            <div class="throne-room-illustration">
+                <svg width="240" height="180" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Placeholder BG (matches the tiles later) -->
+                    <rect width="240" height="180" rx="12" fill="white"/>
+                    
+                    <!-- Holder Base (Cobalt Blue circle) -->
+                    <circle cx="160" cy="40" r="14" fill="#1E3A8A" stroke="black" stroke-width="2"/>
+                    <circle cx="160" cy="40" r="10" fill="#38BDF8" stroke="black" stroke-width="2"/>
+
+                    <!-- Holder Arm (Gold/Yellow L-Shape) -->
+                    <path d="M160 40V24H100V136H168" stroke="black" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M160 40V24H100V136H168" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+
+                    <!-- Roll Cylinder (Vector Shadow first) -->
+                    <path d="M168 56C168 56 200 68 200 96C200 124 168 136 168 136H116C116 136 116 136 116 96C116 56 116 56 116 56H168Z" fill="#1E3A8A" stroke="black" stroke-width="2"/>
+                    
+                    <!-- Roll Cylinder (White paper) -->
+                    <path d="M168 56C168 56 200 68 200 96C200 124 168 136 168 136H112C112 136 112 136 112 96C112 56 112 56 112 56H168Z" fill="white" stroke="black" stroke-width="2"/>
+                    
+                    <!-- Roll inner shadow -->
+                    <ellipse cx="176" cy="96" rx="8" ry="16" fill="black"/>
+
+                    <!-- Dashed Perforation Lines -->
+                    <path d="M112 96H168" stroke="black" stroke-width="1.5" stroke-dasharray="4 4"/>
+                    
+                    <!-- The Hanging Sheet -->
+                    <path d="M112 96V156L108 152L104 156L100 152L96 156L92 152V96H112Z" fill="white" stroke="black" stroke-width="2"/>
+
+                    <!-- The Hand (Tan) -->
+                    <!-- Palm/Thumb base -->
+                    <path d="M120 136C120 136 132 128 144 136V180H120V136Z" fill="#FCD34D" stroke="black" stroke-width="2"/>
+                    <!-- Fingers (very stylized from reference) -->
+                    <rect x="120" y="140" width="10" height="40" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
+                    <rect x="132" y="132" width="10" height="48" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
+                    <rect x="144" y="136" width="10" height="44" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
+                    <rect x="156" y="152" width="10" height="28" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
+                    
+                    <!-- Finger details/Shadows -->
+                    <path d="M125 152V180M137 144V180M149 148V180M161 160V180" stroke="black" stroke-width="1.5"/>
+                    <path d="M120 136C120 136 132 128 144 136L156 152" stroke="black" stroke-width="2"/>
+                    <path d="M125 152V180M137 144V180M149 148V180M161 160V180" stroke="#1E3A8A" stroke-width="1.5"/>
+                </svg>
+                <div class="script-font illust-tag">Secure the drip!</div>
+            </div>
+
+            <header class="chunky-header rounded-border">
                 <div class="genz-tag script-font">#NOBROWNMARKS</div>
-                <h1 class="chunky-font">THE STASH.</h1>
-                <p class="subtitle sans-serif-font">SECURE THE DRIP, AVOID THE UNTHINKABLE.</p>
+                <h1 class="playful-font">THE STASH.</h1>
+                <p class="sans-serif-font">SECURE THE DRIP. NEVER BARE.</p>
             </header>
 
             <div class="input-group">
-                <label class="sans-serif-font">Last Haul Date</label>
-                <input type="date" id="purchaseDate" required class="sans-serif-font">
+                <label class="playful-label">Last Restock</label>
+                <input type="date" id="purchaseDate" required class="sans-serif-font rounded-input">
             </div>
 
             <div class="input-group">
-                <label class="sans-serif-font">Total Rolls (the drip count)</label>
-                <input type="number" id="rollsCount" placeholder="e.g., 24" inputmode="numeric" required class="sans-serif-font">
+                <label class="playful-label">Total Rolls (Current Haul)</label>
+                <input type="number" id="rollsCount" placeholder="e.g., 24" inputmode="numeric" required class="sans-serif-font rounded-input">
             </div>
 
             <div class="input-group">
-                <label class="sans-serif-font">Days 1 Roll Survives (the endurance trial)</label>
-                <input type="number" id="daysPerRoll" placeholder="e.g., 4" inputmode="numeric" required class="sans-serif-font">
+                <label class="playful-label">Days 1 Roll Survives (Endurance Trial)</label>
+                <input type="number" id="daysPerRoll" placeholder="e.g., 4" inputmode="numeric" required class="sans-serif-font rounded-input">
             </div>
 
-            <button id="setReminderBtn" class="chunky-font">SECURE THE DRIP</button>
+            <button id="setReminderBtn" class="playful-font rounded-btn">SECURE THE BAG</button>
 
             <!-- Tip Jar -->
             <a href="YOUR_TIP_LINK_HERE" class="tip-jar script-font" target="_blank">Tip your dev so I don't use leaves ☕</a>

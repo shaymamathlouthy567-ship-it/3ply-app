@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const days = parseInt(daysInput.value);
 
         if (!rolls || !days) {
-            alert("YO! Enter the drip count (rolls) and how many days it survives.");
+            alert("ALERT! Missing essential intel. Enter the total rolls and the daily endurance rate.");
             return;
         }
 
@@ -56,14 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Event lasts 1 hour in the calendar
         const endStr = startStr.replace("090000", "100000");
 
-        // --- NEW PLAYFUL TEXT FOR NOTIFICATION ---
-        const eventSummary = "⚠️ THE STASH IS GONE ⚠️";
-        const eventDescription = "YO! You tomowor won't find a single sheet to wipe your ass with. GO GET THE DRIP TODAY. This is not a drill. 🧻💩";
-        // ----------------------------------------
+        // --- UPDATED HUMOROUS TEXT FOR NOTIFICATION ---
+        const eventSummary = "🚨 ALERT: THRONE ACCESS CRITICAL 🚨";
+        const eventDescription = "ALERT: Your Tomowor Won't find a single sheet to wipe your ass with. GO GET THE BAG. Go get the drip! Avoid the unthinkable. 🧻💩💩";
+        // ---------------------------------------------
 
         const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//The Stash App//EN
+PRODID:-//The Stash Throne Room//EN
 BEGIN:VEVENT
 UID:${new Date().getTime()}@stashapp.com
 DTSTAMP:${formatICSDate(new Date())}Z
@@ -84,7 +84,7 @@ END:VCALENDAR`;
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'stash-alert.ics';
+        link.download = 'throne-room-alert.ics';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
