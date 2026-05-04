@@ -7,7 +7,7 @@
     --white: #ffffff;
     --black: #000000;
     --label-color: #333333;
-    --sage-green: #93a284; /* The Drip Green! */
+    --sage-green: #10B981; /* A cleaner, brighter medium emerald green! */
     
     /* Functional Colors */
     --tile-grid: rgba(255,255,255,0.7); 
@@ -101,7 +101,7 @@ body {
 .final-photo {
     display: block;
     margin: 0 auto; 
-    max-width: 200px; /* Tames Godzilla! */
+    max-width: 200px; 
     height: auto; 
     border: 2px solid var(--black); 
     border-radius: 8px; 
@@ -127,7 +127,7 @@ body {
     color: var(--sage-green); 
     margin-bottom: -15px;
     font-weight: bold;
-    text-shadow: 1px 1px 0px var(--black), -1px -1px 0px var(--black), 1px -1px 0px var(--black), -1px 1px 0px var(--black);
+    /* Removed text-shadow stroke here */
 }
 
 h1 {
@@ -274,26 +274,14 @@ button:active {
 }
 
 /* --- FUNNY HOOK & TIP JAR --- */
-.funny-hook {
-    text-align: center;
-    color: var(--black);
-    font-size: 20px;
-    margin-top: -5px;
-    margin-bottom: 0px;
-}
-
-.tp-icon {
-    font-size: 22px; 
-}
-
 .tip-jar {
     text-align: center;
     font-size: 22px; 
     color: var(--sage-green); 
     text-decoration: underline;
-    margin-top: 0px;
+    margin-top: 5px;
     font-weight: bold;
-    text-shadow: 1px 1px 0px var(--black), -1px -1px 0px var(--black), 1px -1px 0px var(--black), -1px 1px 0px var(--black);
+    /* Removed text-shadow stroke here too */
 }
 
 .ios-prompt {

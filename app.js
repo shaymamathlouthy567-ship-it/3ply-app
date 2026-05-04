@@ -120,10 +120,4 @@ END:VCALENDAR`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-    });
-
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
-    const isIos = () => /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
-    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-    if (isIos() && !isInStandaloneMode()) document.getElementById('iosPrompt').style.display = 'block';
-});
+    })})
