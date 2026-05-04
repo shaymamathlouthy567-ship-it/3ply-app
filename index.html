@@ -14,49 +14,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Bathroom environment (Tiles BG) -->
     <div class="main-wrapper">
         <div class="container floating-card">
             
-            <!-- Exact Illustration recreated as Vector SVG -->
             <div class="throne-room-illustration">
                 <svg width="240" height="180" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Placeholder BG (matches the tiles later) -->
                     <rect width="240" height="180" rx="12" fill="white"/>
-                    
-                    <!-- Holder Base (Cobalt Blue circle) -->
                     <circle cx="160" cy="40" r="14" fill="#1E3A8A" stroke="black" stroke-width="2"/>
                     <circle cx="160" cy="40" r="10" fill="#38BDF8" stroke="black" stroke-width="2"/>
-
-                    <!-- Holder Arm (Gold/Yellow L-Shape) -->
                     <path d="M160 40V24H100V136H168" stroke="black" stroke-width="4" stroke-linecap="round"/>
                     <path d="M160 40V24H100V136H168" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
-
-                    <!-- Roll Cylinder (Vector Shadow first) -->
                     <path d="M168 56C168 56 200 68 200 96C200 124 168 136 168 136H116C116 136 116 136 116 96C116 56 116 56 116 56H168Z" fill="#1E3A8A" stroke="black" stroke-width="2"/>
-                    
-                    <!-- Roll Cylinder (White paper) -->
                     <path d="M168 56C168 56 200 68 200 96C200 124 168 136 168 136H112C112 136 112 136 112 96C112 56 112 56 112 56H168Z" fill="white" stroke="black" stroke-width="2"/>
-                    
-                    <!-- Roll inner shadow -->
                     <ellipse cx="176" cy="96" rx="8" ry="16" fill="black"/>
-
-                    <!-- Dashed Perforation Lines -->
                     <path d="M112 96H168" stroke="black" stroke-width="1.5" stroke-dasharray="4 4"/>
-                    
-                    <!-- The Hanging Sheet -->
                     <path d="M112 96V156L108 152L104 156L100 152L96 156L92 152V96H112Z" fill="white" stroke="black" stroke-width="2"/>
-
-                    <!-- The Hand (Tan) -->
-                    <!-- Palm/Thumb base -->
                     <path d="M120 136C120 136 132 128 144 136V180H120V136Z" fill="#FCD34D" stroke="black" stroke-width="2"/>
-                    <!-- Fingers (very stylized from reference) -->
                     <rect x="120" y="140" width="10" height="40" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
                     <rect x="132" y="132" width="10" height="48" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
                     <rect x="144" y="136" width="10" height="44" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
                     <rect x="156" y="152" width="10" height="28" rx="5" fill="#FCD34D" stroke="black" stroke-width="2"/>
-                    
-                    <!-- Finger details/Shadows -->
                     <path d="M125 152V180M137 144V180M149 148V180M161 160V180" stroke="black" stroke-width="1.5"/>
                     <path d="M120 136C120 136 132 128 144 136L156 152" stroke="black" stroke-width="2"/>
                     <path d="M125 152V180M137 144V180M149 148V180M161 160V180" stroke="#1E3A8A" stroke-width="1.5"/>
@@ -64,30 +41,42 @@
                 <div class="script-font illust-tag">Secure the drip!</div>
             </div>
 
-            <header class="chunky-header rounded-border">
+            <header class="chunky-header">
                 <div class="genz-tag script-font">#NOBROWNMARKS</div>
                 <h1 class="playful-font">THE STASH.</h1>
                 <p class="sans-serif-font">SECURE THE DRIP. NEVER BARE.</p>
             </header>
 
+            <!-- Creative Date Slider -->
             <div class="input-group">
-                <label class="playful-label">Last Restock</label>
-                <input type="date" id="purchaseDate" required class="sans-serif-font rounded-input">
+                <label class="playful-label">When was the haul?</label>
+                <div class="slider-container">
+                    <span id="dateDisplay" class="playful-font date-badge">TODAY</span>
+                    <input type="range" id="purchaseSlider" min="0" max="14" value="0" class="custom-slider">
+                </div>
             </div>
 
-            <div class="input-group">
-                <label class="playful-label">Total Rolls (Current Haul)</label>
-                <input type="number" id="rollsCount" placeholder="e.g., 24" inputmode="numeric" required class="sans-serif-font rounded-input">
-            </div>
+            <!-- Dashboard Dials -->
+            <div class="dials-row">
+                <div class="dial-wrapper">
+                    <label class="playful-label">Rolls</label>
+                    <div class="dial-container" id="dial-rolls">
+                        <div class="dial-rotator"><div class="knob-dot"></div></div>
+                        <div class="dial-value playful-font">12</div>
+                    </div>
+                </div>
 
-            <div class="input-group">
-                <label class="playful-label">Days 1 Roll Survives (Endurance Trial)</label>
-                <input type="number" id="daysPerRoll" placeholder="e.g., 4" inputmode="numeric" required class="sans-serif-font rounded-input">
+                <div class="dial-wrapper">
+                    <label class="playful-label">Survival (Days)</label>
+                    <div class="dial-container" id="dial-days">
+                        <div class="dial-rotator"><div class="knob-dot cobalt-dot"></div></div>
+                        <div class="dial-value playful-font">4</div>
+                    </div>
+                </div>
             </div>
 
             <button id="setReminderBtn" class="playful-font rounded-btn">SECURE THE BAG</button>
 
-            <!-- Tip Jar -->
             <a href="YOUR_TIP_LINK_HERE" class="tip-jar script-font" target="_blank">Tip your dev so I don't use leaves ☕</a>
         </div>
     </div>
