@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const days = parseInt(daysInput.value);
 
         if (!rolls || !days) {
-            alert("Please enter the number of rolls and days.");
+            alert("YO! Enter the drip count (rolls) and how many days it survives.");
             return;
         }
 
@@ -56,16 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Event lasts 1 hour in the calendar
         const endStr = startStr.replace("090000", "100000");
 
+        // --- NEW PLAYFUL TEXT FOR NOTIFICATION ---
+        const eventSummary = "⚠️ THE STASH IS GONE ⚠️";
+        const eventDescription = "YO! You tomowor won't find a single sheet to wipe your ass with. GO GET THE DRIP TODAY. This is not a drill. 🧻💩";
+        // ----------------------------------------
+
         const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//3-Ply App//EN
+PRODID:-//The Stash App//EN
 BEGIN:VEVENT
-UID:${new Date().getTime()}@3plyapp.com
+UID:${new Date().getTime()}@stashapp.com
 DTSTAMP:${formatICSDate(new Date())}Z
 DTSTART;TZID=Local:${startStr}
 DTEND;TZID=Local:${endStr}
-SUMMARY:🚨 CRITICAL ALERT: The Stash is Low
-DESCRIPTION:You tomorrow won't find anything to wipe your ass with. Go to the store today.
+SUMMARY:${eventSummary}
+DESCRIPTION:${eventDescription}
 BEGIN:VALARM
 TRIGGER:-PT0M
 ACTION:DISPLAY
@@ -79,7 +84,7 @@ END:VCALENDAR`;
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'restock-reminder.ics';
+        link.download = 'stash-alert.ics';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
