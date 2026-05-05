@@ -94,23 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const eventSummary = "🚨 ALERT: THRONE ACCESS CRITICAL 🚨";
         const eventDescription = "ALERT: Your Tomorrow Won't find a single sheet to wipe your ass with. GO GET THE BAG. Go get the drip! Avoid the unthinkable. 🧻💩";
 
-        const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//The Stash Throne Room//EN
-BEGIN:VEVENT
-UID:${new Date().getTime()}@stashapp.com
-DTSTAMP:${formatICSDate(new Date())}Z
-DTSTART;TZID=Local:${startStr}
-DTEND;TZID=Local:${endStr}
-SUMMARY:${eventSummary}
-DESCRIPTION:${eventDescription}
-BEGIN:VALARM
-TRIGGER:-PT0M
-ACTION:DISPLAY
-DESCRIPTION:Reminder
-END:VALARM
-END:VEVENT
-END:VCALENDAR`;
+        const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//The Stash Throne Room//EN\nBEGIN:VEVENT\nUID:${new Date().getTime()}@stashapp.com\nDTSTAMP:${formatICSDate(new Date())}Z\nDTSTART;TZID=Local:${startStr}\nDTEND;TZID=Local:${endStr}\nSUMMARY:${eventSummary}\nDESCRIPTION:${eventDescription}\nBEGIN:VALARM\nTRIGGER:-PT0M\nACTION:DISPLAY\nDESCRIPTION:Reminder\nEND:VALARM\nEND:VEVENT\nEND:VCALENDAR`;
 
         const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
         const url = URL.createObjectURL(blob);
@@ -120,4 +104,10 @@ END:VCALENDAR`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-    })})
+    });
+
+    // The iOS Prompt code is safely back where it belongs!
+    const isIos = () => /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+    if (isIos() && !isInStandaloneMode()) document.getElementById('iosPrompt').style.display = 'block';
+});
